@@ -1,18 +1,21 @@
 package cachorro;
 
 public class Cachorro {
-    String nome;
-    String cor;
-    String estadoDeEspirito;
-    int aultua;
-    double peso;
+    private String nome;
+    private String cor;
+    private String estadoDeEspirito;
+    private int aultua;
+    private double peso;
 
-    public Cachorro(String nome, String cor, int aultua, double peso) {
+    public Cachorro() {
+    }
+
+    public Cachorro(String nome, String cor, String estadoDeEspirito, int aultua, double peso) {
         this.nome = nome;
         this.cor = cor;
+        this.estadoDeEspirito = estadoDeEspirito;
         this.aultua = aultua;
         this.peso = peso;
-
     }
 
     public String getNome() {
@@ -47,6 +50,14 @@ public class Cachorro {
         this.peso = peso;
     }
 
+    public String getEstadoDeEspirito() {
+        return estadoDeEspirito;
+    }
+
+    public void setEstadoDeEspirito(String estadoDeEspirito) {
+        this.estadoDeEspirito = estadoDeEspirito;
+    }
+
     public String latir(){
         return "AuoAuo!";
     }
@@ -55,23 +66,22 @@ public class Cachorro {
         return "Bolinha....";
     }
     public String interagir(String acao){
-        if (acao.equals("carinho")){
-            this.estadoDeEspirito = "Feliz";
-        }else if(acao.equals("vai dormir")){
-            this.estadoDeEspirito = "bravo";
-        }else {
-            this.estadoDeEspirito = "neutro";
+        switch (acao){
+            case "carinho": this.estadoDeEspirito = "Feliz";break;
+            case "vai dormir": this.estadoDeEspirito = "Bravo";break;
+            case "pisou na patinha": this.estadoDeEspirito = "Triste";break;
+            default: this.estadoDeEspirito = "neutro";break;
         }
-        return estadoDeEspirito;
+        return this.estadoDeEspirito;
     }
 
     @Override
     public String toString() {
         return
-                "nome='" + nome + '\'' +
-                        ", cor='" + cor + '\'' +
-                        ", estadoDeEspirito='" + estadoDeEspirito + '\'' +
-                        ", aultua=" + aultua +
-                        ", peso=" + peso;
+                "nome= '" + nome + '\'' +
+                        ", cor= '" + cor + '\'' +
+                        ", estadoDeEspirito= '" + estadoDeEspirito + '\'' +
+                        ", aultua= " + aultua +
+                        ", peso= " + peso;
     }
 }
