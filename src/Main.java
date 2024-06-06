@@ -3,6 +3,8 @@ import cachorro.Cachorro;
 public class Main {
     public static void main(String[] args) {
         Cachorro cachorro1 = new Cachorro("Pit bull","Preto",3, 4 );
+        Cachorro cachorro2 = new Cachorro("Viralata","Caramelo",2, 2 );
+
 
         System.out.println(cachorro1);
         System.out.println("Barulho do cachorro: "+cachorro1.latir());
