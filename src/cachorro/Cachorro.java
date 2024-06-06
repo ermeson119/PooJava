@@ -10,10 +10,9 @@ public class Cachorro {
     public Cachorro() {
     }
 
-    public Cachorro(String nome, String cor, String estadoDeEspirito, int aultua, double peso) {
+    public Cachorro(String nome, String cor, int aultua, double peso) {
         this.nome = nome;
         this.cor = cor;
-        this.estadoDeEspirito = estadoDeEspirito;
         this.aultua = aultua;
         this.peso = peso;
     }
@@ -65,12 +64,18 @@ public class Cachorro {
     public String pegar(){
         return "Bolinha....";
     }
+
+    enum EstadoDeEspirito {
+        FELIZ, TRISTE, BRAVO, NEUTRO
+    }
+
     public String interagir(String acao){
+
         switch (acao){
-            case "carinho": this.estadoDeEspirito = "Feliz";break;
-            case "vai dormir": this.estadoDeEspirito = "Bravo";break;
-            case "pisou na patinha": this.estadoDeEspirito = "Triste";break;
-            default: this.estadoDeEspirito = "neutro";break;
+            case "carinho": this.estadoDeEspirito = String.valueOf(EstadoDeEspirito.FELIZ);break;
+            case "vai dormir": this.estadoDeEspirito = String.valueOf(EstadoDeEspirito.BRAVO);break;
+            case "pisou na patinha": this.estadoDeEspirito = String.valueOf(EstadoDeEspirito.TRISTE);break;
+            default: this.estadoDeEspirito = String.valueOf(EstadoDeEspirito.NEUTRO);break;
         }
         return this.estadoDeEspirito;
     }
