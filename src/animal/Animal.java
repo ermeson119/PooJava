@@ -1,6 +1,6 @@
 package animal;
 
-public class Animal  {
+public abstract class Animal  {
     protected String nome;
     protected String cor;
     protected String estadoDeEspirito;
@@ -14,6 +14,46 @@ public class Animal  {
         this.nome = nome;
         this.cor = cor;
         this.autura = autura;
+        this.peso = peso;
+    }
+
+    public int getAutura() {
+        return autura;
+    }
+
+    public void setAutura(int autura) {
+        this.autura = autura;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getEstadoDeEspirito() {
+        return estadoDeEspirito;
+    }
+
+    public void setEstadoDeEspirito(String estadoDeEspirito) {
+        this.estadoDeEspirito = estadoDeEspirito;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
@@ -32,9 +72,7 @@ public class Animal  {
         return this.estadoDeEspirito;
     }
 
-    public void soar(){
-        System.out.println(" ");
-    }
+    public abstract void soar();
 
 
 
